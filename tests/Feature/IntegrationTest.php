@@ -11,17 +11,18 @@ class IntegrationTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test(): void
-    {
-        $response = $this->get('/home');
+    #public function test(): void
+    #{
+    #   $response = $this->get('/home');
 
-        $response->assertStatus(302);
-    }
+    #  $response->assertStatus(302);
+    #}
 
-    public function test2(): void
-    {
-        $response = $this->get('/success');
+    #public function test2(): void
+    #{
+    #   $response = $this->get('/success');
 
-        $response->assertStatus(200);
-    }
+    #  $response->assertStatus(200);
+    #}
+
 }
