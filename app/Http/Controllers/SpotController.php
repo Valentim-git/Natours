@@ -34,9 +34,9 @@ class SpotController extends Controller
         
 
         $request->validate([
-            'name' => 'required|string|max:' . self::MAX_STRING_LENGTH,
+            'name' => 'required|string|max:255',
             'cost' => 'required|integer',
-            'city' => 'required|string|max:' . self::MAX_STRING_LENGTH,
+            'city' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'description' => 'required|string',
         ]);

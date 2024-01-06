@@ -36,9 +36,9 @@ class UserController extends Controller
     {
 
         $request->validate([
-            'name' => ['required', 'string', 'max:' . self::MAX_STRING_LENGTH,],
-            'email' => ['required', 'string', 'email', 'max:' . self::MAX_STRING_LENGTH,, 'unique:users'],
-            'city' => ['required', 'string', 'max:' . self::MAX_STRING_LENGTH,],
+            'name' => ['required', 'string', 'max:' . self::MAX_STRING_LENGTH],
+            'email' => ['required', 'string', 'email', 'max:' . self::MAX_STRING_LENGTH, 'unique:users'],
+            'city' => ['required', 'string', 'max:' . self::MAX_STRING_LENGTH],
             'password' => ['required', 'string', 'min:8'],
         ]);
 
