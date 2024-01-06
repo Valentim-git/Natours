@@ -18,8 +18,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args:
-            -Dsonar.projectKey=teixeira27_Natours
-            -Dsonar.organization=teixeira27
+            -Dsonar.projectKey=Valentim-git_Natours
+            -Dsonar.organization=valentim-git
   tests:
     name: PHPUnit
     runs-on: ubuntu-latest
