@@ -63,7 +63,7 @@ class SlotController extends Controller
         //
     }
 
-    public function session(Slot $slot,$quantity)
+    public function session(Slot $slot, $quantity)
     {
         \Stripe\Stripe::setApiKey(config('stripe.sk'));
         $session = \Stripe\Checkout\Session::create([

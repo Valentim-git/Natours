@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="" role="group">
+                    <div class="btn-group" role="group">
                         <a href="{{ url('/users') }}" class="btn btn-primary">List Users</a>
                         <a href="{{ url('/spots') }}" class="btn btn-primary">List Spots</a>
                     </div>

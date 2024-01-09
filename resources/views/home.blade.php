@@ -17,6 +17,14 @@
                     {{ __('You are logged in!') }}
                 </div>
 
+                <div>
+                    <form action="{{ route('spot.search') }}" method="GET">
+                        <label for="city">Pesquisar por cidade:</label>
+                        <input type="text" name="city" id="city" required>
+                        <button type="submit" class="btn btn-primary">Pesquisar</button>
+                    </form>
+                </div>
+
                 <div class="card-body">
                     @include('partials.upload')
                 </div>
@@ -27,4 +35,5 @@
             </div>
         </div>
     </div>
-    @endsection
+</div>
+@endsection

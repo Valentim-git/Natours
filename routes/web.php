@@ -51,6 +51,9 @@ Route::get('/spots/show/{spot}', [SpotController::class, 'show']); //->middlewar
 Route::get('/spots/edit/{spot}', [SpotController::class, 'edit'])->middleware('UserAdmin');
 Route::post('/spots/update/{spot}', [SpotController::class, 'update'])->middleware('UserAdmin');
 Route::delete('/spots/destroy/{spot}', [SpotController::class, 'destroy'])->middleware('UserAdmin');
+Route::get('/search', [SpotController::class, 'searchByCity'])->name('spot.search');
+
+
 
 //Route::get('/', 'App\Http\Controllers\SpotController@checkout')->name('checkout');
 // web.php

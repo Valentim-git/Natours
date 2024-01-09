@@ -31,7 +31,7 @@ class SpotController extends Controller
      */
     public function store(Request $request)
     {
-        
+
 
         $request->validate([
             'name' => 'required|string|max:255',
@@ -135,5 +135,13 @@ class SpotController extends Controller
     public function calcCost(Spot $spot)
     {
         return $spot->cost * 100;
+    }
+
+    public function searchByCity(Request $request)
+    {
+        $city = $request->input('city');
+        $spots = Spot::where('city', 'like', '%' . $city . '%')->get();
+
+        return view('spots.search', ['spots' => $spots]);
     }
 }
