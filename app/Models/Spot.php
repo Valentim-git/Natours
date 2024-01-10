@@ -21,25 +21,22 @@ class Spot extends Model
         return $this->hasMany(Slot::class);
     }
 
-    // Relacionamento Muitos para Muitos com usuários que favoritaram o spot
     public function favoritedBy()
     {
         return $this->belongsToMany(User::class, 'favorites', 'spot_id', 'user_id')->withTimestamps();
     }
 
-    // Método para adicionar o spot aos favoritos de um usuário
     public function addToFavorites(User $user)
     {
         $this->favoritedBy()->attach($user->id);
     }
 
-    // Método para remover o spot dos favoritos de um usuário
     public function removeFromFavorites(User $user)
     {
         $this->favoritedBy()->detach($user->id);
     }
 
-    // Método para verificar se o spot é favorito para um usuário específico
+
     public function isFavoritedBy(User $user)
     {
         return $this->favoritedBy->contains($user);

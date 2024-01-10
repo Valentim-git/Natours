@@ -10,6 +10,7 @@ class UserController extends Controller
 {
 
     public const MAX_STRING_LENGTH = 255;
+    protected const ROUTE = '/users';
 
     /**
      * Display a listing of the resource.
@@ -42,7 +43,7 @@ class UserController extends Controller
             'password' => ['required', 'string', 'min:8'],
         ]);
 
-        return redirect('/users')->with('success', 'User inserted successfully');
+        return redirect(self::ROUTE)->with('success', 'User inserted successfully');
     }
 
     public function show(User $user)
@@ -59,12 +60,12 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->update($request->all());
-        return redirect('/users');
+        return redirect(self::ROUTE);
     }
 
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect('/users');
+        return redirect(self::ROUTE);
     }
 }
